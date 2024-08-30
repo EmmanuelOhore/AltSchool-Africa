@@ -62,6 +62,10 @@ nav .p{
     align-items: center;
     gap: 3rem;
 }
+.menu-toggle {
+  display: none;
+  pointer-events: none;
+}
 .menu-list li a {
     transition: color 0.5s ease-in-out; 
     transition-delay: 0.2s;
@@ -191,6 +195,38 @@ footer{
 
 
 @media (max-width:900px) {
+    /* drop down styling */
+    nav{
+      position: relative;
+  }
+  .menu-toggle {
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: .7rem;
+      display: none;
+    }
+  .menu-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      margin-top: -1.95rem;
+      padding-bottom: .5rem;
+      left: 0;
+      gap: 1rem;
+      width: 100%;
+      background-color: white;
+     
+  }
+  .toggle-button {
+      display: flex;
+      top: 1rem;
+      cursor: pointer;
+  }
+  #menu-toggle:checked + .toggle-button + .menu-list {
+      display: flex;
+    }
+  /* drop down styling end */
   .toggle-button {
       display: flex;
   }
@@ -232,6 +268,12 @@ footer{
 }
 
 @media (max-width:500px) {
+  .toggle-button{
+    margin-top: -1rem;
+  }
+  .menu-list {
+    margin-top: -3.6rem;
+    }
   .personal-info h1, .personal-info  h2 {
     font-size: 1.2rem;
     }
@@ -262,6 +304,12 @@ footer{
   header .logo {
     font-size:1rem ;
   }
+  .toggle-button{
+    margin-right: -2.5rem;
+  }
+  .toggle-button .bar {
+    width: 80%;
+  }
   header .p {
     font-size:1.5rem ;
   }
@@ -281,7 +329,7 @@ footer{
 
   .table-content tr th,
   td {
-    font-size: .65rem;
+    font-size: .55rem;
   }
 
   .table-section h1{
@@ -293,6 +341,13 @@ footer{
     text-align: center;
   }
 
+}
+
+@media (max-width:350px) {
+  .table-content tr th,
+  td {
+    font-size: .47rem;
+  }
 }
 
 

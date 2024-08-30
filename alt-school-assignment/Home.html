@@ -4,18 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Home.css" />
-    <link rel="icon" type="image/png" href="alt logo.png">
+    <link rel="icon" type="image/png" href="Assets/alt logo.png" />
     <title>Personal Info-Assignment</title>
   </head>
   <body>
     <header>
       <nav>
         <h1 class="logo"><span class="p">P</span>ORT</h1>
-        <a href="#" class="toggle-button">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </a>
+        </label>
+
         <ul class="menu-list">
           <li><a href="#Home">Home</a></li>
           <li><a href="#About">About</a></li>
@@ -58,28 +60,43 @@
         </article>
 
         <article class="About-section-goals">
-          <h3 id="Goal">My Tech Goals</h3>
-          <p>
-            First and foremost, my overarching goal is to continue improving my
-            skills and proficiency in various technologies. However, my ambition
-            is to secure a position in a tech-related job where I can gain
-            valuable experience working alongside developers from diverse
-            backgrounds. I aim to absorb insights and techniques that will
-            enhance my programming abilities.<br />
+          <div class="section-goals-text">
+            <h3 id="Goal">My Tech Goals</h3>
+            <p>
+              First and foremost, my overarching goal is to continue improving
+              my skills and proficiency in various technologies. However, my
+              ambition is to secure a position in a tech-related job where I can
+              gain valuable experience working alongside developers from diverse
+              backgrounds. I aim to absorb insights and techniques that will
+              enhance my programming abilities.<br />
 
-            Ultimately, within the next two years, I aspire to get involved in
-            open-source communities, expand my professional network, learn new
-            technologies, and improve on those I already know. Through these
-            experiences, I hope to achieve significant growth and development in
-            my career as a frontend developer.
-          </p>
+              Ultimately, within the next two years, I aspire to get involved in
+              open-source communities, expand my professional network, learn new
+              technologies, and improve on those I already know. Through these
+              experiences, I hope to achieve significant growth and development
+              in my career as a frontend developer.
+            </p>
+
+              <h3 >Why I Joined AltSchool</h3>
+              <p>
+                I joined AltSchool with the ambition to elevate my frontend development skills in a dynamic and structured environment. 
+                My journey as a developer has been driven by a deep interest in HTML, CSS, and JavaScript, and I recognized the need 
+                for a learning platform that provides comprehensive, hands-on training. AltSchool offers a unique opportunity to work 
+                on practical projects, receive personalized feedback, and collaborate with peers, which aligns perfectly with my desire 
+                to refine my expertise and adapt to the evolving tech landscape. By engaging with AltSchool’s innovative curriculum 
+                and experienced mentors, I aim to enhance my technical abilities and achieve my professional goals as a versatile and 
+                skilled developer.
+              </p>
+          </div>
+          <div class="section-goals-img">
+            <img
+              src="Assets/slack-profile-pic.jpg"
+              alt="personal-picture"
+              data-testid="slackProfilePicture"
+            />
+          </div>
         </article>
-      </div>
-      <img
-        src="Assets/slack-profile-pic.jpg"
-        alt="personal-picture"
-        data-testid="slackProfilePicture"
-      />
+      </div> 
     </section>
 
     <section class="contact-information" id="Contact">
@@ -90,7 +107,5 @@
         <p data-testid="StudentID">Student ID:ALT/SOE/024/1306</p>
       </div>
     </section>
-
-    <script lang="javascript" src="index.js"></script>
   </body>
 </html>

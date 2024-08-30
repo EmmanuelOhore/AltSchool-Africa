@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Media.css" />
-    <link rel="icon" type="image/png" href="alt logo.png">
+    <link rel="icon" type="image/png" href="Assets/alt logo.png">
 
     <title>Media</title>
   </head>
@@ -12,11 +12,12 @@
     <header>
       <nav>
         <h1 class="logo"><span class="p">P</span>ORT</h1>
-        <a href="#" class="toggle-button">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </a>
+        </label>
         <ul class="menu-list">
           <li><a href="Home.html">Home</a></li>
           <li><a href="Form.html">Forms</a></li>
@@ -26,7 +27,7 @@
       </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
       <div class="profile-section">
         <img src="Assets/proflile pic.jpg" alt="Profile Picture" />
         <div>
@@ -47,6 +48,7 @@
           <video controls>
             <source src="Assets/warhammer.mp4" type="video/mp4" />
           </video>
+          <p>Experience the intense battles and rich lore of the Warhammer 40k universe in this video.</p>
         </div>
 
         <div class="media-card">
@@ -72,6 +74,7 @@
               <source src="Assets/Jaeybxrd - Gen Z (loners).mp3" type="audio/mp3" />
             </audio>
             </div>
+            <p>Enjoy a collection of my favorite tracks by JaeyBxrd, featuring a mix of introspective lyrics and captivating beats.</p>
           </div>
         </div>
       </section>
@@ -79,11 +82,18 @@
       <div class="gallery-section">
         <h3>Photo Gallery</h3>
         <div class="images">
-          <img src="Assets/TOP_0001.jpg" alt="Photo 1" />
-          <img src="Assets/TOP_0004.jpg" alt="Photo 2" />
+            <picture>
+                <source srcset="Assets/TOP_0001.jpg" type="image/jpeg" />
+                <img src="Assets/TOP_0001.jpg" alt="Photo 1" />
+            </picture>
+            <picture>
+                <source srcset="Assets/TOP_0004.jpg" type="image/jpeg" />
+                <img src="Assets/TOP_0004.jpg" alt="Photo 2" />
+            </picture>
         </div>
-      </div>
+        <p>A couple of personal snapshots of me.</p>
     </div>
+  </main>
 
     <footer>
       <small>&copy; 2024 Emmanuel . All Rights Reserved.</small>
