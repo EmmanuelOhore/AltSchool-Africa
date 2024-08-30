@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --large-text: #0b1e48;
+  --smaller-text: #85888d;
+  --inner-ground: #fafafa;
+  --light-purple: #6a6ff5;
+  --Light-blue: #0367f2;
+  --background: #fffcf8;
+  --nav: #000019;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+/* HEADER STYLING */
+header{  
+    display: flex;
+    height: 7rem;
+    align-items: center;
+    background: white ;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index:1000;
+    padding: 1rem 3rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+nav a{
+    color: var(--nav);
+    font-size: 1.07rem;
+    font-weight: 500;
+}
+nav .p{
+    color: var(--Light-blue);
+    font-size:2rem ;
+}
+.menu-list{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.menu-list li a {
+    transition: color 0.5s ease-in-out; 
+    transition-delay: 0.2s;
+  }
+.menu-list li a:hover{
+    color: var(--Light-blue)
+}
+
+.toggle-button {
+  position: absolute;
+  top: 3rem;
+  right: .5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--Light-blue);
+  border-radius: 10px;
+}
+
+
+/* General info styling */
+.info-section {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 2rem auto;
+    font-family: 'Arial', sans-serif;
+    color:var(--smaller-text)
+  }
+  
+  /* Personal Information */
+  .personal-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color:var(--Light-blue)
+  }
+  
+  .personal-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:var(--smaller-text)
+  }
+  
+  .personal-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  /* School Information */
+  .school-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .school-info a {
+    color:var(--Light-blue);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+
+/* table section styling */
+.table-section{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+.table-section h1{
+    color: var(--smaller-text);
+    margin-bottom: .5rem;
+    text-align: center;
+}
+.table-content {
+  border-collapse: collapse;
+  border-radius: .5rem .5rem 0 0 ;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.table-content tr {
+  text-align: left;
+}
+.table-content tr th,
+td {
+  padding: 1rem;
+  font-weight: 500;
+}
+.table-content thead{
+    background-color: var(--Light-blue);
+    color: var(--inner-ground);
+}
+.table-content tbody tr {
+    border-bottom: 1px solid var(--smaller-text);
+}
+.table-content tbody td{
+    color: var(--smaller-text);
+}
+.table-content tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.table-content tbody .active{
+    color: var(--Light-blue);
+    font-weight: 500;
+}
+.table-content tbody tr:last-of-type{
+    border-bottom: 3px solid var(--Light-blue);
+}
+
+/* footer styling */
+footer{
+    font-size: .8rem;
+    color: var(--smaller-text);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
+@media (max-width:900px) {
+  .toggle-button {
+      display: flex;
+  }
+  .menu-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 7rem;
+      left: 0;
+      gap: 1rem;
+      width: 100%;
+      background-color: white;
+     
+  }
+
+  .menu-list ul {
+      width: 100%;
+      flex-direction: column;
+  }
+
+  .menu-list ul li {
+      text-align: center; 
+  }
+
+  .menu-list ul li a {
+      padding: .5rem 1rem;
+  }
+
+  .menu-list.active {
+      display: flex;
+  }
+
+  .table-section{
+    width: 100%;
+  }
+  footer{
+    text-align: center;
+  }
+}
+
+@media (max-width:500px) {
+  .personal-info h1, .personal-info  h2 {
+    font-size: 1.2rem;
+    }
+
+  .personal-info p,  .school-info p, .menu-list li a{
+    font-size: .65rem;
+    }
+
+  .table-content tr th,
+  td {
+    padding:.4rem;
+    font-weight: 500;
+    font-size: .65rem;
+  }
+
+  .table-section h1{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  footer{
+    font-size: .65rem;
+    text-align: center;
+  }
+
+}
+
+@media (max-width:450px){
+  header .logo {
+    font-size:1rem ;
+  }
+  header .p {
+    font-size:1.5rem ;
+  }
+  .toggle-button{
+    top: 1.5rem;
+  }
+  header{
+    height: 4.5rem;
+  }
+  .personal-info h1, .personal-info  h2 {
+    font-size: 1rem;
+    }
+
+  .personal-info p,  .school-info p, .menu-list li a{
+    font-size: .6rem;
+    }
+
+  .table-content tr th,
+  td {
+    font-size: .65rem;
+  }
+
+  .table-section h1{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  footer{
+    font-size: .6rem;
+    text-align: center;
+  }
+
+}
+
+
+

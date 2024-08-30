@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:"Poppins" ;
+    src: url(https://fonts.google.com/specimen/Poppins);
+}
+:root{
+    --large-text: #002D58;
+    --backgroung: #0367F2;
+    --nav: #000019;
+    --text: #464D65;
+    --section: #000A2D;
+}
+
+
+/* HEADER STYLING */
+header{  
+    display: flex;
+    height: 7rem;
+    align-items: center;
+    background: white ;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index:1000;
+    padding: 1rem 3rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+nav a{
+    color: var(--nav);
+    font-size: 1.07rem;
+    font-weight: 500;
+}
+nav .p{
+    color: var(--backgroung);
+    font-size:2rem ;
+}
+.menu-list{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.menu-list li a {
+    transition: color 0.5s ease-in-out; 
+    transition-delay: 0.2s;
+  }
+.menu-list li a:hover{
+    color: var(--backgroung)
+}
+
+
+.toggle-button {
+    position: absolute;
+    top: 3rem;
+    right: .5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--backgroung);
+    border-radius: 10px;
+}
+
+/* INTRO-SECTION STYLING */
+.intro-section{
+    height: 80vh;
+    padding: 7rem 10rem;
+    background: linear-gradient(to bottom, #f8f8f8, #d3d3d3);
+}
+
+
+.intro-section h2{
+    font-size: 1.2rem;
+    color: var(--backgroung);
+    font-weight: 300;
+}
+.intro-section h3{
+    margin-top: 3rem;
+    font-size: 3rem;
+    color: var(--large-text);
+}
+.intro-section p{
+    margin-top: 2rem;
+    max-width: 600px;
+    line-height:2rem;
+    color: var(--text);
+}
+
+
+.btn-learn{
+    width: 13rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    margin-top: 1.5rem;
+    box-shadow: 0px 4px 6px var(--backgroung);
+    background-color: var(--backgroung);
+    position: relative;
+    overflow: hidden; 
+    z-index: 0;
+    border: 1px solid var(--backgroung);
+    box-shadow: none;
+    z-index: 1;
+    transition: color 300ms ease-in-out;
+    
+}
+
+.btn-learn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color:#1561cb;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+
+.btn-learn:hover::before,
+.btn-learn:focus::before{
+    transform: scaleX(1);
+}
+
+
+/* ABOUT SECTION STYLING */
+.About-section{
+    display: flex;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+}
+.About-section img{
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+.About-section h3{
+    font-size: 2rem;
+    color: var(--large-text);
+}
+.About-section p{
+    line-height: 1.5rem;
+    margin-top: .5rem;
+    color: var(--text);
+    width: 60%;
+}
+.About-section-text-container{
+    padding: 1rem;
+    height: fit-content;
+    width: 75%;
+    padding-left: 7rem;
+}
+
+.About-section-goals{
+    margin-top: 4rem;
+}
+
+/* CONTACT INFORMATION STYLING */
+.contact-information{
+    padding: 1rem 8rem;
+    margin-top: 2rem;
+    display: flex;
+    gap: 10rem;
+}
+.contact-information h3{
+    font-size: 2rem;
+    color: var(--large-text);
+}
+.slack-info-container{
+    padding: 2rem;
+    border: 1px solid var(--large-text);
+    border-radius: 10px;
+}
+
+.slack-info-container p{
+    line-height: 1.5rem;
+    margin-top: .5rem;
+    color: var(--text);
+}
+
+.links-container{
+    padding: 2rem;
+    border: 1px solid var(--large-text);
+    border-radius: 10px;
+}
+.links-container a{
+    line-height: 1.5rem;
+    margin-top: .5rem;
+    color: var(--text);
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width:1024px) {
+    .intro-section{
+        padding: 3rem 5rem;
+    }
+    .About-section{
+        flex-direction: column;
+    }
+    .About-section img{
+        margin-top: 1.5rem;
+        height: auto;
+    }
+    .About-section-bio,.About-section-goals {
+        text-align: center;
+    }
+    .About-section-bio p, .About-section-goals p{
+        width: 65%;
+        margin: 0 auto;
+    }
+    .About-section-text-container{
+        padding: 1rem;
+        width: 75%;
+        margin: 0  auto;
+    }
+    .contact-information{
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* TABLET STYLES */
+
+@media (max-width:850px) {
+    .toggle-button {
+        display: flex;
+    }
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        gap: 1rem;
+        width: 100%;
+        background-color: white;
+       
+    }
+
+    .menu-list ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .menu-list ul li {
+        text-align: center; 
+    }
+
+    .menu-list ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .menu-list.active {
+        display: flex;
+    }
+    .clock{
+        margin-right: 11rem;
+    }
+    .intro-section{
+        padding: 4rem 5rem;
+        height: 60vh;
+    }
+    .intro-section h2{
+        margin-top:2em ;
+    }
+    .About-section{
+        padding: 1rem;
+    }
+    .contact-information{
+        flex-direction: column;
+        padding: 1rem 4rem;
+        gap: 5rem;
+    }
+   
+}
+@media (max-width:768px) {
+    .intro-section{
+        padding: 2rem 5rem;
+        height: 60vh;
+    }
+    .intro-section h2{
+        margin-top:1rem ;
+    }
+}
+
+
+/* MOBILE STYLE */
+
+@media (max-width:450px) {
+     body{
+        width: 120%;
+     }
+   header{
+    width: 100%;
+   }
+    .menu-list a{
+        font-size: .8rem;
+    }
+    header{
+        padding: 1rem;
+    }
+    nav h1{
+        font-size: 1rem;
+    }
+    .clock{
+        width: 7.5rem;
+        height: 2rem;
+        margin-left: 5rem;
+    }
+    .clock ul{
+        font-size: .5rem;
+        gap: 7.5px;
+        margin-top: .2rem;
+    }
+    .clock li{
+        font-size: .5rem;
+        font-weight: 500;
+        margin: 0 auto;
+    }
+    #Date{
+        font-size: .5rem;
+    }
+
+    .intro-section{
+        padding:2rem;
+    }
+    .intro-section h2{
+        font-size: .8rem;
+        margin-top: 6rem;
+    }
+    .intro-section h3{
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+      
+    }
+    .intro-section p{
+        margin-top: .6rem;
+        line-height:1rem;
+        font-size: .8rem;
+    }
+    .btn-learn{
+        width: 6.5rem;
+        height: 1.5rem;
+        font-size: .7rem;
+    }
+
+    .About-section{
+        padding: 1rem ;
+    }
+    .About-section h3{
+        font-size: 1.5rem;
+    }
+
+.About-section-bio,.About-section-goals {
+    text-align: center;
+    width: 100%;
+}
+.About-section-bio p, .About-section-goals p{
+    width: 100%;
+    font-size: .8rem;
+}
+.About-section-text-container{
+    padding: 1rem;
+    width: 100%;
+    margin: 0  auto;
+}
+.contact-information{
+    padding: 1rem 4rem;
+    gap: 2.5rem;
+}
+.contact-information h3{
+    font-size: 1.5rem;
+}
+.slack-info-container p{
+ font-size:.8rem ;
+}
+.links-container a{
+ font-size: .8rem;
+}
+}
+
+@media (max-width:350px) {
+    body{
+        width: 140%;
+     }
+     .intro-section h2{
+        font-size: .8rem;
+        margin-top: 1rem;
+    }
+}
