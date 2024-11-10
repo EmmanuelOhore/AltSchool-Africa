@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WP Push Checkout</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="/" class="nav__logo">
+          <img src="assets/logo.svg" alt="WP Pusher logo" />
+        </a>
+        <ul class="nav__menu">
+          <li><a href="#" class="nav__link">Download</a></li>
+          <li><a href="#" class="nav__link">Learn more</a></li>
+          <li><a href="#" class="nav__link">Pricing</a></li>
+          <li><a href="#" class="nav__link">Help</a></li>
+          <li><button class="nav__button">Account</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="content-wrapper">
+        <!-- basic info section  -->
+        <section class="basic-info" aria-labelledby="basic-info-title">
+          <div class="checkout">
+            <h2>Checkout</h2>
+          </div>
+
+          <!-- bassic info-container  -->
+          <div class="basic-info-container">
+            <div class="numbering">
+              <p>1</p>
+              <span>Your Basic Information</span>
+            </div>
+            <!-- input container -->
+            <form class="basic-info-form-container">
+              <div class="input">
+                <div class="input-box">
+                  <label for="FN">First Name </label>
+                  <input placeholder="Jane" type="text" id="FN" name="FN" />
+                </div>
+                <div class="input-box">
+                  <label for="LN">Last Name</label>
+                  <input placeholder="Doe" type="text" id="DOB" name="LN" />
+                </div>
+              </div>
+              <div class="input-box email">
+                <label for="email">E-mail</label>
+                <input
+                  placeholder="Janedoe@example.com"
+                  type="email"
+                  id="email"
+                  name="email"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- payment info container  -->
+          <div class="payment-info-container">
+            <div class="numbering">
+              <p>2</p>
+              <span>Your Payment Information</span>
+            </div>
+            <!-- input container -->
+            <form class="payment-info-form-container">
+              <div class="input-box">
+                <label for="FN">Credit Card </label>
+                <input
+                  placeholder="Card Number"
+                  type="text"
+                  id="FN"
+                  name="FN"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- need help section -->
+          <div class="needHelp">
+            <button>Buy WP Pusher</button>
+            <p>
+              <span class="question">?</span
+              ><span class="bold"> Need any help ? </span>Dont hesitate to
+              contact<br />
+              Support!
+            </p>
+            <small><span class="tiny">Powered by</span> Stripe</small>
+          </div>
+        </section>
+
+        <!-- freelancer section -->
+        <section
+          class="freelancer-section"
+          aria-labelledby="freelancer-plan-title"
+        >
+          <h2 id="freelancer-plan-title" class="freelancer-section__title">
+            Freelancer
+          </h2>
+          <p class="plan-charges">
+            <span class="plan-charges__currency">&dollar;</span>
+            <span class="plan-charges__amount">99</span>
+            <span class="plan-charges__period">/ year</span>
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list__item">
+              <img src="assets/mark.svg" alt="" aria-hidden="true" />
+              <span>Use on 5 client sites</span>
+            </li>
+            <li class="feature-list__item">
+              <img src="assets/mark.svg" alt="" aria-hidden="true" />
+              <span>Private repositories</span>
+            </li>
+            <li class="feature-list__item">
+              <img src="assets/mark.svg" alt="" aria-hidden="true" />
+              <span>Email support</span>
+            </li>
+          </ul>
+          <div class="upgrade-info">
+            <p>Need <span>20</span> Websites?</p>
+            <p class="upgrade-link">Switch to the Agency plan</p>
+          </div>
+          <div class="divider" aria-hidden="true"></div>
+          <blockquote class="testimonial">
+            <p>
+              FTP is horrible to deal with.
+              <span class="testimonial__highlight">WP Pusher</span> solves that
+              issue, and the customer support is awesome!
+            </p>
+          </blockquote>
+          <div class="author">
+            <img
+              src="https://github.com/shadcn.png"
+              class="author__avatar"
+              alt="Kirk Beard's profile photo"
+            />
+            <p class="author__name">Kirk Beard</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

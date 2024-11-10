@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+
+        <ul class="menu-list">
+          <li><a href="../Assignment-One/index.html">Assingment-One</a></li>
+          <li><a href="../Assignment-Two/huckberry.html">Assingment-Two</a></li>
+          <li>
+            <a href="../Assignment-Three/novuswatch.html">Assingment-Three</a>
+          </li>
+          <li>
+            <a href="../Assignment-Four/indivisuls.html">Assingment-Four</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="logo-container">
+        <div class="Individuals">
+          <figure>
+            <img
+              src="Images/logo.png"
+              alt="logo"
+              width="100px"
+              height="100px"
+            />
+          </figure>
+          <div class="indiviaul-text-container">
+            <h1>For Individuals</h1>
+            <p class="laptop-view">
+              Start benefitting from the wellness experience. For companies
+              looking on increasing productivity and improving organization
+              wellness
+            </p>
+            <p class="phone-view">
+              Inspiring wholesome harmony for the mind, body and spirit, for
+              everyone, everywhere.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form action="#">
+          <div class="form-item">
+            <div class="flex">
+              <label for="firstName">First Name</label>
+              <input id="firstName" placeholder="Tolu" type="text" required />
+            </div>
+
+            <div class="flex">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" type="text" required />
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="flex activity">
+              <label for="gender">Gender</label>
+              <select id="gender" class="select">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+              <span class="arrow"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
+            </div>
+
+            <div class="flex date">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input id="dateOfBirth" type="text" placeholder="Select here" />
+              <span class="calender">
+                <i class="fa-solid fa-calendar-days"></i
+              ></span>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="flex">
+              <label for="weight">Weight(KG)</label>
+              <input id="weight" type="text" placeholder="Enter weight here" />
+            </div>
+
+            <div class="flex">
+              <label for="height">Height(CM)</label>
+              <input id="height" type="text" placeholder="Enter height here" />
+            </div>
+          </div>
+
+          <div class="form-item2">
+            <div class="flex activity">
+              <label for="activityLevel">Activity Level</label>
+              <select id="activitylevel" class="select">
+                <option value="1">Mild</option>
+                <option value="2">Modrate</option>
+              </select>
+              <span class="arrow ACT"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
+            </div>
+            <div class="flex eye-con">
+              <label for="password">Password</label>
+              <input id="password" type="password" />
+              <span class="eye"><i class="fa-solid fa-eye"></i> </span>
+            </div>
+          </div>
+
+          <div class="btn-text">
+            <button>Register</button>
+            <p>
+              By clicking Register, you agree to our
+              <a href="#">Terms of Use</a> and our
+              <a href="#">Privacy Policy</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
