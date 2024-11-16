@@ -116,7 +116,7 @@ main {
   font-size: 1.4rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   /* nav style */
   nav {
     position: relative;
@@ -200,7 +200,7 @@ main {
 }
 
 /* tablwt styling */
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .otta {
     padding: 1rem;
     top: -2rem;
