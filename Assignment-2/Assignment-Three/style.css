@@ -149,7 +149,7 @@ nav .p {
   }
 }
 /*tablet sytling  */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   /* nav style */
   nav {
     position: relative;

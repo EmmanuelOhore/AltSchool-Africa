@@ -13,7 +13,35 @@ body {
   font-family: var(--font-family);
   background-color: var(--color-background);
   max-width: 1440px;
+  position: relative;
+
   margin: 0 auto;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.fa-layer-group {
+  position: fixed;
+  font-size: 1.5rem;
+  transition: all 300ms ease-in-out;
+  color: var(--color-darkblue);
+  bottom: 10px;
+  cursor: pointer;
+  right: 10px;
+  animation: bounce 2s infinite;
 }
 
 /* Layout */
@@ -51,6 +79,10 @@ body {
   background-color: transparent;
   font-weight: 600;
   cursor: pointer;
+}
+header i {
+  display: none;
+  opacity: 0;
 }
 
 /* Content wrapper */
@@ -223,7 +255,7 @@ body {
 
 .plan-charges__amount {
   font-size: 3.75rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .plan-charges__period {
@@ -294,4 +326,156 @@ li,
 a {
   text-decoration: none;
   list-style-type: none;
+}
+
+/* laptop t;ing */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    width: 70%;
+    margin: 4rem auto;
+  }
+  .freelancer-section {
+    width: 88%;
+    border-radius: 0;
+  }
+  .basic-info {
+    width: 100%;
+  }
+  #freelancer-plan-title {
+    margin: 0.5rem auto;
+    font-size: 1.8rem;
+  }
+  .feature-list,
+  .plan-charges,
+  .upgrade-info {
+    margin: 0.5rem auto;
+  }
+  .basic-info .basic-info-form-container .email {
+    width: 100%;
+  }
+  .testimonial {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    position: relative;
+  }
+  header i {
+    position: absolute;
+    right: 1rem;
+    opacity: 1;
+    font-size: 1.5rem;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  .nav__logo img {
+    width: 10rem;
+  }
+  .nav__menu {
+    display: none;
+  }
+  .content-wrapper {
+    width: 90%;
+    margin: 4rem auto;
+  }
+  .freelancer-section {
+    width: 83.5%;
+    border-radius: 0;
+  }
+  .basic-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav__menu {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .content-wrapper {
+    width: 95%;
+    margin: 4rem auto;
+  }
+  .freelancer-section {
+    width: 78.5%;
+    border-radius: 0;
+  }
+  .basic-info {
+    width: 100%;
+  }
+  .basic-info .checkout h2 {
+    font-size: 1.4rem;
+  }
+  .basic-info .basic-info-container .numbering,
+  .payment-info-container .numbering {
+    padding: 0 1rem;
+  }
+  .basic-info .basic-info-container .numbering span,
+  .payment-info-container .numbering span {
+    font-size: 1rem;
+  }
+  .basic-info .basic-info-container .numbering p,
+  .payment-info-container .numbering p {
+    font-size: 0.95rem;
+    width: 25px;
+    height: 25px;
+  }
+  .basic-info .basic-info-form-container,
+  .payment-info-form-container {
+    padding: 0.9rem;
+  }
+  .basic-info .basic-info-form-container .input-box,
+  .payment-info-form-container .input-box {
+    width: 100%;
+  }
+  .payment-info-container .input-box {
+    margin-top: 1rem;
+  }
+  .payment-info-container .payment-info-form-container {
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .needHelp {
+    padding-top: 3rem;
+  }
+  .needHelp button {
+    width: 90%;
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
+  .freelancer-section__title {
+    font-size: 1rem;
+    outline: 1px sold red;
+  }
+  #freelancer-plan-title {
+    font-size: 1.4rem;
+  }
+  .plan-charges__currency {
+    font-size: 1rem;
+  }
+
+  .plan-charges__amount {
+    font-size: 3rem;
+  }
+
+  .plan-charges__period {
+    font-size: 1rem;
+  }
+  .feature-list {
+    gap: 10px;
+  }
+  .feature-list .feature-list__item span {
+    font-size: 0.9rem;
+  }
+  .upgrade-info p {
+    font-size: 0.9rem;
+  }
+  .testimonial {
+    font-size: 1rem;
+  }
 }
