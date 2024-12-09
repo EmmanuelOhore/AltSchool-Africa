@@ -1,0 +1,11 @@
+.grid {
+  width: fit-content;
+  padding: 1rem;
+  height: auto;
+  border: solid grey;
+  border-radius: 5px;
+  display: grid;
+}
+.cells {
+  outline: 1px solid black;
+}
