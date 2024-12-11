@@ -5,7 +5,7 @@ import Grid from "./Grid";
 function App() {
   return (
     <>
-      <Grid numRows={3} numCols={2} />
+      <Grid numRows={2} numCols={4} />
     </>
   );
 }

@@ -5,8 +5,8 @@ import "./grid.css";
 function Grid({ numRows, numCols }) {
   let totalCells = numRows * numCols;
   const griDstyle = {
-    gridTemplateColumns: `repeat(${numCols}, 30px)`,
-    gridTemplateRows: `repeat(${numRows}, 30px)`,
+    gridTemplateColumns: `repeat(${numCols}, 70px)`,
+    gridTemplateRows: `repeat(${numRows}, 70px)`,
     gap: "1rem",
   };
   return (
