@@ -1,0 +1,130 @@
+/* general styling and varaibles  */
+:root {
+  --background: #fafafa;
+  --text-color: #7c7c7c;
+  --yellow: #ffd43b;
+  --h1-color: #212529;
+}
+
+.signin-overlay {
+  background-color: var(--background);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.signin-container {
+  display: flex;
+  padding: 1rem;
+}
+/* img styling */
+.img-sontainer {
+  border-radius: 2rem;
+  background: url(../assets/img-section.png);
+  background-color: #111111;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  width: 50%;
+}
+
+/* getstarted container */
+.getStarted-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.getStarted-container .started-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+}
+.started-wrapper h1 {
+  text-align: center;
+  width: max-content;
+  color: var(--h1-color);
+  font-size: 2.5rem;
+}
+.started-wrapper p {
+  color: #4f4f4f;
+  font-weight: 400;
+  line-height: 1.2rem;
+  font-size: 0.9rem;
+}
+.started-wrapper button {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: var(--yellow);
+  border-radius: 0.5rem;
+  border: none;
+  margin: 0 auto;
+}
+
+/* tablet styleing */
+@media (max-width: 800px) {
+  .started-wrapper h1 {
+    font-size: 2rem;
+  }
+  .img-sontainer {
+    background-size: contain;
+  }
+  .getStarted-container .started-wrapper {
+    width: 100%;
+    padding: 2rem;
+  }
+  .started-wrapper p {
+    font-size: 0.8rem;
+  }
+  .started-wrapper button {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* mobile styling */
+@media (max-width: 500px) {
+  .signin-container {
+    flex-direction: column;
+  }
+  .img-sontainer {
+    height: 50%;
+    width: 100%;
+    background-size: contain;
+  }
+  .getStarted-container {
+    width: 100%;
+    height: 50%;
+  }
+  .started-wrapper h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* mobile styling */
+@media (max-width: 450px) {
+  .signin-container {
+    outline: 1px solid green;
+    height: 100%;
+    padding: 1rem 0.5rem;
+  }
+  .started-wrapper h1 {
+    font-size: 1.5rem;
+  }
+  .started-wrapper p {
+    font-size: 0.7rem;
+  }
+  .started-wrapper button {
+    padding: 0.6rem;
+  }
+}
+
+/* mobile syling */
+@media (max-width: 350px) {
+  .getStarted-container .started-wrapper {
+    padding: 1rem;
+  }
+}

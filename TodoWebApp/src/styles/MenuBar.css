@@ -1,0 +1,334 @@
+/* general styling and variables  */
+:root {
+  --background-color: #f4f4f4;
+  --number-background: #ebebeb;
+  --h2-h3-text: #444444;
+  --hover: #ebebeb;
+  --icon: #7c7c7c;
+  --red-pink: #ff6b6b;
+  --cyan: #66d9e8;
+  --yellow: #ffd43b;
+  --border-radius-small: 0.5rem;
+}
+
+.menu-container {
+  height: 100%;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-small);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+/* collapsed menu start */
+
+/* collapsed menu end */
+
+h4 {
+  color: var(--h2-h3-text);
+  font-size: 0.89rem;
+  font-weight: 400;
+}
+.section-title {
+  color: var(--h2-h3-text);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+i {
+  font-size: 1.1rem;
+  color: var(--icon);
+}
+
+/* general styling   end*/
+/* Menu head section styling start */
+.menu-header {
+  display: flex;
+  flex-direction: column;
+}
+.menu-header .menu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-header .menu-title h2 {
+  font-size: 2rem;
+  color: var(--h2-h3-text);
+}
+.menu-header .menu-title i {
+  font-size: 1.2rem;
+  color: var(--icon);
+}
+.menu-header .menu-search {
+  text-align: center;
+  margin-top: 1rem;
+}
+.menu-search input {
+  height: 2.2rem;
+  padding: 0.8rem;
+  background: transparent;
+  width: 98%;
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--icon);
+}
+/* Menu head section styling end */
+
+/* task section  and list section  styling start */
+.task-section,
+.list-section {
+  border-bottom: 1px solid var(--icon);
+  margin-top: 1rem;
+}
+.task-list-container,
+.list-content-container {
+  margin-top: 0.3rem;
+  padding: 0.5rem 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem;
+}
+.task-list-container .task-list-item,
+.list-content-container .list-item {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 300ms ease-in-out;
+}
+.task-list-container .task-list-item:hover,
+.list-content-container .list-item:hover {
+  background-color: var(--hover);
+}
+.task-list-item .task-icon-content,
+.list-item .list-icon-content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.task-count,
+.list-count {
+  padding: 0.2rem 0.7rem;
+  background-color: white;
+  color: var(--icon);
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* list section list box */
+
+.list-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 0.25rem;
+}
+.personal {
+  background-color: var(--red-pink);
+}
+.work {
+  background-color: var(--cyan);
+}
+.school {
+  background-color: var(--yellow);
+}
+
+/* task section and list section styling end*/
+
+/* menu option syling start */
+.menu-options {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.option {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+/* menu option syling end */
+
+/* responsive stlyling */
+@media (max-width: 1024px) {
+  .menu-container {
+    padding: 0.5rem;
+  }
+  /* menu header */
+  .menu-header .menu-title h2 {
+    font-size: 1.5rem;
+  }
+  .menu-header .menu-title i {
+    font-size: 1rem;
+  }
+  .menu-header .menu-search {
+    margin-top: 0.7rem;
+  }
+  .menu-search input {
+    font-size: 0.8rem;
+    height: 2rem;
+  }
+  .menu-search input::placeholder {
+    font-size: 0.8rem;
+  }
+  /* task section  and list section  styling start */
+  .task-section,
+  .list-section {
+    margin-top: 1rem;
+  }
+  .task-list-container,
+  .list-content-container {
+    padding: 0.2rem 0 1rem 0;
+  }
+  .task-list-container .task-list-item,
+  .list-content-container .list-item {
+    padding: 0.35rem;
+  }
+  .list-icon-content h4,
+  .task-icon-content h4 {
+    font-size: 0.85rem;
+  }
+  .list-icon-content i,
+  .task-icon-content i {
+    font-size: 0.9rem;
+  }
+  .option i {
+    font-size: 0.8rem;
+  }
+  .option h4 {
+    font-size: 0.85rem;
+  }
+}
+
+/* tablet styling */
+@media (max-width: 800px) {
+  .menu-container {
+    padding: 0.5rem;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+  /* menu header */
+  .menu-header .menu-title h2 {
+    font-size: 1rem;
+  }
+  .menu-header .menu-title i {
+    font-size: 0.8rem;
+  }
+  .menu-header .menu-search {
+    margin-top: 1rem;
+  }
+  .menu-search input {
+    font-size: 0.8rem;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+  }
+  .menu-search input::placeholder {
+    font-size: 0.7rem;
+  }
+  /* task section  and list section  styling start */
+  .task-section {
+    margin-top: 1rem;
+  }
+  .list-section {
+    margin-top: 1.5rem;
+  }
+  .task-list-container,
+  .list-content-container {
+    padding: 0.2rem 0 0.5rem 0;
+  }
+  .task-list-container .task-list-item,
+  .list-content-container .list-item {
+    padding: 0.35rem;
+  }
+
+  .list-content-container {
+    margin-top: 1rem;
+  }
+  .task-count,
+  .list-count {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  .list-icon-content h4,
+  .task-icon-content h4 {
+    font-size: 0.75rem;
+  }
+  .list-icon-content i,
+  .task-icon-content i {
+    font-size: 0.8rem;
+  }
+  .list-box {
+    width: 18px;
+    height: 18px;
+  }
+  .option i {
+    font-size: 0.8rem;
+  }
+  .option h4 {
+    font-size: 0.75rem;
+  }
+}
+
+/* mobile styling */
+
+/* mobile stying */
+@media (max-width: 500px) {
+  .menu-container {
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+  /* menu header */
+  .menu-header .menu-title h2 {
+    font-size: 1.4rem;
+  }
+  .menu-header .menu-title i {
+    font-size: 1rem;
+  }
+  .menu-header .menu-search {
+    margin-top: 1.1rem;
+  }
+  .menu-search input {
+    font-size: 0.8rem;
+    border-radius: 0.25rem;
+    height: 2rem;
+  }
+  .menu-search input::placeholder {
+    font-size: 0.8rem;
+  }
+  /* task section  and list section  styling start */
+
+  .task-list-container,
+  .list-content-container {
+    padding: 0.4rem 0 0.5rem 0;
+  }
+  .task-list-container .task-list-item,
+  .list-content-container .list-item {
+    padding: 0.5rem;
+  }
+
+  .list-content-container {
+    margin-top: 0.5rem;
+  }
+  .task-count,
+  .list-count {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  .list-icon-content h4,
+  .task-icon-content h4 {
+    font-size: 0.9rem;
+  }
+  .list-icon-content i,
+  .task-icon-content i {
+    font-size: 0.9rem;
+  }
+  .list-box {
+    width: 18px;
+    height: 18px;
+  }
+  .option i {
+    font-size: 0.9rem;
+  }
+  .option h4 {
+    font-size: 0.8rem;
+  }
+}

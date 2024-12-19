@@ -1,0 +1,185 @@
+/* General container styling */
+:root {
+  --background: #fafafa;
+  --border-color: #eeeeee;
+  ---icon-color: #7c7c7c;
+  --h1-color: #212529;
+  --todo-color: #595959;
+  --button: #828282;
+}
+.calendar-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visuals */
+}
+
+/* FullCalendar styling overrides */
+.fc {
+  height: 100%;
+}
+
+/* Toolbar styling */
+.fc-toolbar {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Navigation buttons (prev, next, today) */
+.fc-prev-button,
+.fc-next-button,
+.fc-today-button {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Title (month/day/week display) */
+.fc-toolbar-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--h1-color);
+}
+
+/* View buttons (day, week, month) */
+.fc-button-group .fc-button {
+  background: transparent;
+  border: 1px solid var(--button);
+  color: var(--h1-color);
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.fc-button-group .fc-button:hover {
+  background-color: #ddd;
+}
+
+.fc-button-group .fc-button.fc-button-active {
+  color: #ffff;
+}
+
+.fc-daygrid-day {
+  background: white;
+  border: 1px solid #e6e6e6;
+  transition: background-color 0.2s ease;
+}
+
+/* Additional styling to reset background from FullCalendar */
+.fc-daygrid-day,
+.fc-timegrid-slot {
+  background-color: #ffffff !important;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #f9f9f9;
+}
+
+/* Events styling */
+.fc-event {
+  background-color: #d1eaed; /* Green background for events */
+  border: none;
+  color: var(--button) !important;
+  border-radius: 4px;
+  font-weight: 400 !important;
+  font-size: 0.85rem;
+  padding: 2px 4px;
+}
+.fc-event .fc-event-title {
+  color: #212529 !important;
+  font-weight: 400; /* Set desired text color */
+}
+.fc-event .fc-event-time {
+  color: #212529;
+}
+
+@media (max-width: 800px) {
+  .fc-toolbar-title {
+    font-size: 1.3rem !important;
+  }
+  .fc-button-group .fc-button {
+    padding: 0.35rem;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+  }
+  .fc-event {
+    font-size: 0.8rem;
+  }
+
+  .fc-today-button {
+    text-transform: capitalize !important;
+    padding: 0.35rem !important;
+    font-size: 0.9rem !important;
+  }
+  .custom-day-header {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  .fc-col-header-cell-cushion {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.3rem !important;
+  }
+}
+
+/* mobile stling */
+@media (max-width: 500px) {
+  .fc-toolbar-title {
+    font-size: 0.8rem !important;
+    width: max-content;
+  }
+  .fc-button-group .fc-button {
+    padding: 0.2rem;
+    font-size: 0.7rem;
+    text-transform: capitalize;
+  }
+  .fc-event {
+    font-size: 0.7rem;
+  }
+
+  .fc-today-button {
+    text-transform: capitalize !important;
+    padding: 0.2rem !important;
+    font-size: 0.7rem !important;
+  }
+  .custom-day-header {
+    font-size: 0.7rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  .fc-col-header-cell-cushion {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem !important;
+  }
+  .fc-daygrid-day-number {
+    font-size: 0.8rem;
+  }
+  .fc-timegrid-slot-label-cushion {
+    font-size: 0.8rem;
+  }
+  .fc-timegrid-axis-cushion {
+    text-transform: capitalize !important;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,107 @@
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.settings-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffd43b;
+}
+
+.meme-section {
+  background-color: #ffffff;
+  width: 70%;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lazycontainer {
+  background: url(../assets/lazy.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 90%;
+  margin: 0 auto;
+  height: 13rem;
+}
+.meme-image {
+  width: 100%;
+
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.coming-soon-text {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #66d9e8;
+  margin-bottom: 0.5rem;
+}
+
+.meme-caption {
+  font-size: 1.2rem;
+  color: #555;
+}
+/* tablet styling */
+@media (max-width: 800px) {
+  .meme-section {
+    width: 80%;
+  }
+  .lazycontainer {
+    width: 100%;
+    height: 10rem;
+  }
+  .settings-title {
+    font-size: 2rem;
+  }
+  .coming-soon-text {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  .meme-caption {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .meme-section {
+    width: 100%;
+  }
+  .lazycontainer {
+    width: 100%;
+    height: 8rem;
+  }
+  .settings-title {
+    font-size: 1.6rem;
+  }
+  .coming-soon-text {
+    font-size: 1.2rem;
+  }
+  .meme-caption {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 350px) {
+  .settings-container {
+    padding: 0.2rem;
+  }
+  .lazycontainer {
+    width: 100%;
+    height: 6rem;
+  }
+  .settings-title {
+    margin-bottom: 0.5rem;
+  }
+}
