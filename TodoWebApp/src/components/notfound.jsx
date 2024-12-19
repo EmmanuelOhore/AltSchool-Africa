@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Notfound = () => {
   // yes i did it , too tired to seprate the styles into a diffrent file. well it works ! so if it aint broke i aint fixing it
   const styles = {
@@ -40,8 +41,8 @@ const Notfound = () => {
       <p style={styles.paragraph}>
         Oops! The page you&apos;re looking for doesn&apos;t exist.
       </p>
-      <a
-        href="/"
+      <Link
+        to="/"
         style={styles.button}
         onMouseOver={(e) =>
           (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)
@@ -51,7 +52,7 @@ const Notfound = () => {
         }
       >
         Go Back Home
-      </a>
+      </Link>
     </div>
   );
 };

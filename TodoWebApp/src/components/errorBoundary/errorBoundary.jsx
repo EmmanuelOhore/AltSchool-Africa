@@ -12,6 +12,7 @@ class ErrorBoundary extends Component {
   handleReload = () => {
     window.location.reload();
   };
+
   render() {
     if (this.state.hasError) {
       return (
