@@ -98,7 +98,7 @@ const Menu = () => {
             <h4>404 Error</h4>
           </div>
         </Link>
-        <Link to="/app/settings">
+        <Link onClick={handleshowsidebar} to="/app/settings">
           <div className="option settings">
             <i className="fa-solid fa-sliders"></i>
             <h4>Settings</h4>
