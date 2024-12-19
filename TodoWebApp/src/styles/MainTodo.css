@@ -199,8 +199,7 @@
   padding: 0.4rem 0.6rem;
   margin-top: 0.6rem;
 }
-.todo-task-details .Task-description-container {
-}
+
 .Task-description-container p {
   color: var(--todo-color);
   font-size: 0.9rem;
