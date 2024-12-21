@@ -280,6 +280,9 @@
 
 /* mobile stayling large */
 @media (max-width: 500px) {
+  .task {
+    padding: 0.2rem;
+  }
   .task-title {
     font-size: 1.5rem;
   }
@@ -335,22 +338,31 @@
 }
 
 @media (max-width: 320px) {
+  .task {
+    padding: 0.4rem;
+    width: 100% !important;
+  }
   .task-title {
     font-size: 1.2rem;
   }
 
   .task-header button {
-    margin-right: 0.8rem;
+    margin-right: 0.3rem;
   }
   .task-form {
     margin-top: 1rem;
   }
   .task-input-group .task-input {
     font-size: 0.7rem;
+    width: 97%;
+    margin: 0 auto;
     padding: 0.45rem 0.2rem;
   }
   .task-input-group .task-textarea {
     font-size: 0.7rem;
+    width: 97%;
+    margin: 0 auto;
+
     padding: 0.6rem 0.4rem;
     height: 4rem;
   }
