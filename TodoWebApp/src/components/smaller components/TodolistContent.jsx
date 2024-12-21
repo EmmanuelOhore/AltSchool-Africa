@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { TodoContext } from "../../utlis/todoContext";
+import axios from "axios";
 import { useContext, useState } from "react";
 
 const TodoListContent = ({
@@ -53,20 +54,37 @@ const TodoListContent = ({
     const { name, value } = e.target;
     setEditedTodo({ ...editedTodo, [name]: value });
   };
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.stopPropagation();
-    setTodo((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === editedTodo.id ? { ...todo, ...editedTodo } : todo
-      )
-    );
-    console.log(currentTaskId);
-    console.log(editingIndex);
+    localStorage.setItem("savedtodo", JSON.stringify(todo));
 
     handleEditToggle();
-    handleIconClick(e);
     setCurOpen(null);
     setEditingIndex(null);
+    try {
+      const url = `https://todolistapp-production.up.railway.app/tasks/${editedTodo.id}/`;
+      console.log("Saving todo:", editedTodo);
+
+      const response = await axios.put(url, editedTodo);
+
+      console.log("Updated todo from server:", response.data);
+
+      setTodo((prevTodos) =>
+        prevTodos.map((todo) =>
+          todo.id === response.data.id ? { ...todo, ...response.data } : todo
+        )
+      );
+
+      localStorage.setItem("savedtodo", JSON.stringify(todo));
+
+      alert("Task updated successfully!");
+      handleEditToggle();
+      setCurOpen(null);
+      setEditingIndex(null);
+    } catch (error) {
+      console.error("Error updating the task:", error);
+      alert("Failed to save the changes. Please try again.");
+    }
   };
 
   const handlecheck = (todoEl) => {
@@ -97,6 +115,7 @@ const TodoListContent = ({
             onClick={(e) => e.stopPropagation()}
             onChange={() => handlecheck(todoEl)}
             checked={todoEl.checked}
+            className="checkbox"
             type="checkbox"
           />
           {editingIndex === index ? (
@@ -156,7 +175,7 @@ const TodoListContent = ({
               <div className="Subtask-details">
                 <p>
                   {
-                    todo.find((task) => task.id === currentTaskId)?.subTask
+                    todo.find((task) => task.id === currentTaskId)?.subtasks
                       ?.length
                   }
                 </p>

@@ -15,7 +15,7 @@ const Menu = () => {
       <header className="menu-header">
         <div className="menu-title">
           <h2>Menu</h2>
-          <i onClick={handleshowsidebar} className="fa-solid fa-bars"></i>
+          <i onClick={handleshowsidebar} className="fa-solid fa-arrow-left"></i>
         </div>
         <div className="menu-search">
           <Search />

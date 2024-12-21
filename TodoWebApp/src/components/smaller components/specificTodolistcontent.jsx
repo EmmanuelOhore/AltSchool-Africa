@@ -61,7 +61,7 @@ const SpecificTodoListContent = ({ todoEl, index, handleDisplay }) => {
                 <time>{todoEl.due_date}</time>
               </div>
               <div className="Subtask-details">
-                <p>1</p>
+                <p> {todoEl.subtasks?.length}</p>
                 <h4>Subtasks</h4>
               </div>
               <div className="tag-details">
@@ -81,6 +81,7 @@ SpecificTodoListContent.propTypes = {
     display: PropTypes.bool.isRequired,
     description: PropTypes.string.isRequired,
     list_type: PropTypes.string.isRequired,
+    subtasks: PropTypes.array,
     due_date: PropTypes.string.isRequired,
   }).isRequired,
   handleDisplay: PropTypes.func.isRequired,

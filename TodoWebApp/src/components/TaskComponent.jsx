@@ -2,14 +2,13 @@ import { useContext, useState } from "react";
 import "../styles/Task.css";
 import AddSubTask from "./smaller components/Addsubtask";
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 import { TodoContext } from "../utlis/todoContext";
 
 const Task = ({ currentTaskId, setCurrentTaskId }) => {
   // state declaration
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const { todo, setTodo, handleTaskDisplay, addtodo, setaddTodo } =
     useContext(TodoContext);
 
@@ -25,48 +24,76 @@ const Task = ({ currentTaskId, setCurrentTaskId }) => {
     setIsModalOpen(false);
   };
   // main content return
-  const { title, description, list_type, due_date, subTask } = addtodo;
-
+  const { title, description, list_type, due_date, subtasks } = addtodo;
+  const resetForm = () => {
+    setaddTodo({
+      title: "",
+      description: "",
+      list_type: "Personal",
+      due_date: "",
+      subtasks: [],
+    });
+  };
   // function to handle submiission of  input values
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTodo((prev) => [
-      ...prev,
-      {
-        id: uuidv4(),
-        title: title,
-        list_type: list_type,
-        due_date: due_date,
-        description: description,
-        subTask: subTask,
-        checked: false,
-      },
-    ]);
-    handleTaskDisplay();
+    const url = "https://todolistapp-production.up.railway.app/tasks/";
+    const newTodo = {
+      title: title,
+      list_type: list_type,
+      due_date: due_date,
+      description: description,
+      subtasks: subtasks || [],
+      checked: false,
+      display: false,
+    };
+    try {
+      const response = await axios.post(url, newTodo);
+      const createdTodo = { ...response.data, ...newTodo };
+      console.log(response.data);
+      setTodo((prev) => [createdTodo, ...prev]);
+      resetForm();
+      handleTaskDisplay();
+    } catch (error) {
+      console.error("Error adding task:", error);
+    }
   };
 
   const handleSubTaskToggle = (taskId, subtaskIndex) => {
     setTodo((prev) =>
       prev.map((task) => {
         if (task.id === taskId) {
-          const updatedSubTask = task.subTask.map((subel, index) => {
+          const updatedSubTask = task.subtasks.map((subel, index) => {
             if (index === subtaskIndex) {
-              return { ...subel, completed: !subel.completed }; // Toggle 'completed'
+              return { ...subel, completed: !subel.completed };
             }
             return subel;
           });
-          return { ...task, subTask: updatedSubTask };
+          return { ...task, subtasks: updatedSubTask };
         }
         return task;
       })
     );
   };
 
-  const handledeletetodo = (taskid) => {
+  const handledeletetodo = async (taskid) => {
+    if (!taskid) {
+      console.error("Task ID is undefined");
+      return;
+    }
+
     if (window.confirm("Are you sure you want to delete this task?")) {
-      const newdeltedtodo = todo.filter((task) => task.id !== taskid);
-      setTodo(newdeltedtodo);
-      handleTaskDisplay();
+      try {
+        await axios.delete(
+          `https://todolistapp-production.up.railway.app/tasks/${taskid}`
+        );
+
+        const newDeletedTodo = todo.filter((task) => task.id !== taskid);
+        setTodo(newDeletedTodo);
+        handleTaskDisplay();
+      } catch (error) {
+        console.error("Error deleting task:", error.response || error.message);
+      }
     }
   };
 
@@ -147,7 +174,9 @@ const Task = ({ currentTaskId, setCurrentTaskId }) => {
         <button
           className="task-add-subtask-btn"
           disabled={
-            todo.find((task) => task.id === currentTaskId)?.subTask?.length >= 4
+            currentTaskId &&
+            todo.find((task) => task.id === currentTaskId)?.subtasks?.length >=
+              4
           }
           onClick={() => openModal(currentTaskId)}
         >
@@ -155,26 +184,30 @@ const Task = ({ currentTaskId, setCurrentTaskId }) => {
         </button>
         <ul className="task-subtask-list">
           {(currentTaskId
-            ? todo.find((task) => task.id === currentTaskId)?.subTask
-            : addtodo.subTask
+            ? todo.find((task) => task.id === currentTaskId)?.subtasks
+            : addtodo.subtasks
           )?.map((subel, index) => (
             <li key={subel.id || index} className="task-subtask">
-              <input
-                type="checkbox"
-                id={`subtask-${index}`}
-                checked={subel.completed}
-                onChange={() => handleSubTaskToggle(currentTaskId, index)}
-              />
-              <label
-                htmlFor={`subtask-${index}`}
-                className={
-                  subel.completed
-                    ? "task-subtask-label strike"
-                    : "task-subtask-label"
-                }
-              >
-                {subel.title}
-              </label>
+              {subel.title === "" ? null : (
+                <>
+                  <input
+                    type="checkbox"
+                    id={`subtask-${index}`}
+                    checked={subel.completed}
+                    onChange={() => handleSubTaskToggle(currentTaskId, index)}
+                  />
+                  <label
+                    htmlFor={`subtask-${index}`}
+                    className={
+                      subel.completed
+                        ? "task-subtask-label strike"
+                        : "task-subtask-label"
+                    }
+                  >
+                    {subel.title}
+                  </label>
+                </>
+              )}
             </li>
           ))}
         </ul>

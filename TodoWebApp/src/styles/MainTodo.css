@@ -16,17 +16,17 @@
 .strike {
   text-decoration: line-through !important;
 }
-.maincomponent-container .fa-bars {
+.fa-bars {
   opacity: 0;
   pointer-events: none;
 }
-.maincomponent-container .mainbars {
+.mainbars {
   position: absolute;
   pointer-events: all;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   opacity: 1;
   display: block;
-  top: 1rem;
+  top: 1.5rem;
   left: 0.5rem;
 }
 /* pagination styling start */
@@ -43,15 +43,22 @@
   list-style: none;
   padding: 0;
 }
-
+.parginatedbtn {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
 .rc-pagination-item {
-  margin: 0 5px;
-  padding: 0 12px;
+  margin: 0 4px;
+  padding: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
 }
-
+.rc-pagination-next button:after,
+.rc-pagination-prev button::after {
+  content: none !important;
+}
 .rc-pagination-item-active {
   background-color: white;
   color: white;
@@ -457,5 +464,102 @@
   }
   .Task-description-container p {
     font-size: 0.7rem;
+  }
+  .paginate {
+    padding: 0 1rem;
+  }
+  .error {
+    font-size: 1.2rem;
+  }
+  .rc-pagination-item {
+    margin: 0 2px;
+  }
+  .parginatedbtn i {
+    font-size: 0.8rem;
+  }
+  .mainbars {
+    top: 0;
+    left: 0.3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .maincomponent-container .mainbars {
+    top: 2.5rem;
+  }
+  .mainTodo-container {
+    padding: 0.5rem 0.4rem;
+    gap: 2rem;
+  }
+  .todoHeader h1,
+  .workHeader h1 {
+    font-size: 1.3rem;
+  }
+  .search-container {
+    margin-top: 1.3rem;
+  }
+  .search-container .search-todo {
+    height: 2rem;
+    margin-bottom: 0.5rem !important;
+  }
+  .search-container .search-todo::placeholder {
+    font-size: 0.8rem;
+  }
+  .todoHeader {
+    gap: 0.3rem;
+  }
+  .todoHeader h2,
+  .workHeader h2 {
+    font-size: 1.1rem;
+  }
+
+  .todo-content-container .addTodo {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .todo-detail-wrapper .todo-check h3 {
+    font-size: 0.7rem;
+  }
+  .decriptionedit,
+  .editingInput {
+    font-size: 0.7rem;
+  }
+  .todo-task-details .task-detaiils-todo-container {
+    margin-top: 0.5rem;
+  }
+  .edittedsave i {
+    font-size: 0.75rem;
+  }
+  .todo-task-details .task-detaiils-todo-container {
+    gap: 1rem;
+  }
+
+  .todo-task-details .Subtask-details h4,
+  .todo-task-details .tag-details p {
+    font-size: 0.65rem;
+  }
+  .task-date time {
+    font-size: 0.65rem;
+    width: max-content;
+  }
+  .todo-content .todo {
+    padding: 0.5rem 0.2rem;
+  }
+  .todo-task-details .tag-details .tag {
+    width: 10px;
+    height: 10px;
+  }
+  .todo-task-details .Subtask-details p {
+    padding: 0.1rem 0.2rem;
+    font-size: 0.7rem;
+  }
+  .todo-detail-wrapper .todo-check .checkbox {
+    width: 15px;
+    height: 15px;
+  }
+  .todo-detail-wrapper i {
+    font-size: 0.8rem;
   }
 }

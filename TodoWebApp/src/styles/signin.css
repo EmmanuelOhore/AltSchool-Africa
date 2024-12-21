@@ -125,6 +125,17 @@
 /* mobile syling */
 @media (max-width: 350px) {
   .getStarted-container .started-wrapper {
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+
+  .getStarted-container {
+    justify-content: start;
+    padding-top: 4.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .getStarted-container {
+    padding-top: 2rem;
   }
 }

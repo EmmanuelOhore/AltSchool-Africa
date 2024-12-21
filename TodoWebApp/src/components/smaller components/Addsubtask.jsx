@@ -3,11 +3,18 @@ import { TodoContext } from "../../utlis/todoContext";
 import PropTypes from "prop-types";
 import "rc-dialog/assets/index.css";
 import Dialog from "rc-dialog";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const AddSubTask = ({ closeModal, isModalOpen, taskId }) => {
   const { setTodo, setaddTodo } = useContext(TodoContext);
   const [subtitle, setsubTitle] = useState("");
   const handlesave = () => {
+    if (!subtitle.trim()) {
+      toast.error("Subtask title cannot be empty."); // Display an error message
+      return; // Stop further execution
+    }
+
     if (taskId) {
       // Update existing tasks in the 'todo' state
       setTodo((prev) => {
@@ -15,7 +22,10 @@ const AddSubTask = ({ closeModal, isModalOpen, taskId }) => {
           if (task.id === taskId) {
             return {
               ...task,
-              subTask: [...task.subTask, { title: subtitle, completed: false }],
+              subtasks: [
+                ...task.subtasks,
+                { title: subtitle, completed: false },
+              ],
             };
           }
           return task;
@@ -25,8 +35,8 @@ const AddSubTask = ({ closeModal, isModalOpen, taskId }) => {
       // Update the 'addtodo' state for new tasks
       setaddTodo((prev) => ({
         ...prev,
-        subTask: [
-          ...(prev.subTask || []),
+        subtasks: [
+          ...(prev.subtasks || []),
           { title: subtitle, completed: false },
         ],
       }));
@@ -41,6 +51,7 @@ const AddSubTask = ({ closeModal, isModalOpen, taskId }) => {
   };
   return (
     <>
+      <ToastContainer />
       <Dialog
         title="Add Sticky Note"
         visible={isModalOpen}

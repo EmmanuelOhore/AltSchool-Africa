@@ -183,3 +183,54 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 320px) {
+  .fc-toolbar-title {
+    font-size: 0.65rem !important;
+    width: max-content;
+  }
+  .fc-button-group .fc-button {
+    padding: 0.2rem 0.1rem;
+    font-size: 0.5rem;
+
+    text-transform: capitalize;
+  }
+  .fc-event {
+    font-size: 0.7rem;
+  }
+
+  .fc-today-button {
+    text-transform: capitalize !important;
+
+    padding: 0.1rem !important;
+    font-size: 0.55rem !important;
+  }
+  .custom-day-header {
+    font-size: 0.65rem;
+
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  .fc-col-header-cell-cushion {
+    font-size: 0.65rem;
+
+    font-weight: 500;
+    padding: 0.3rem !important;
+  }
+  .fc-daygrid-day-number {
+    font-size: 0.7rem;
+  }
+  .fc-timegrid-slot-label-cushion {
+    font-size: 0.65rem;
+  }
+  .fc-timegrid-axis-cushion {
+    text-transform: capitalize !important;
+    font-size: 0.7rem;
+  }
+  .fc-event .fc-event-title {
+    font-size: 0.65rem;
+  }
+}

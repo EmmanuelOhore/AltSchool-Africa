@@ -34,7 +34,9 @@ const Personalpage = () => {
   return (
     <>
       <section className="work-page-container">
-        <BarIcon />
+        <div className="baricon">
+          <BarIcon />
+        </div>
         <ListDisplayHeader title={"Personal"} number={personaltodo.length} />
         <div className="search-container">
           <Search setSearchTerm={setSearchTerm} />

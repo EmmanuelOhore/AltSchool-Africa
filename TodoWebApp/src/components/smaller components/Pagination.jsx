@@ -13,6 +13,27 @@ const CustomPagination = ({ Listitem, currentPage, Pagesize, setpages }) => {
       total={Listitem.length}
       pageSize={Pagesize}
       onChange={handlePageChange}
+      showLessItems
+      itemRender={(current, type, originalElement) => {
+        if (type === "prev") {
+          return (
+            <button className="parginatedbtn back">
+              <i className="fa-solid fa-angles-left"></i>
+            </button>
+          );
+        }
+        if (type === "next") {
+          return (
+            <button className="parginatedbtn next">
+              <i className="fa-solid fa-angles-right"></i>
+            </button>
+          );
+        }
+        if (type === "page") {
+          return <button className="parginatedbtn cur">{current}</button>;
+        }
+        return originalElement;
+      }}
     />
   );
 };

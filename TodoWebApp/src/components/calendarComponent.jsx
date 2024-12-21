@@ -11,7 +11,7 @@ const Calendar = () => {
   const { todo } = useContext(TodoContext);
   const events = todo.map((todo) => ({
     title: todo.title,
-    start: todo.dueDate,
+    start: todo.due_date,
     id: todo.id,
   }));
 

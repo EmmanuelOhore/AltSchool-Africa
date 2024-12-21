@@ -333,3 +333,57 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 320px) {
+  .task-title {
+    font-size: 1.2rem;
+  }
+
+  .task-header button {
+    margin-right: 0.8rem;
+  }
+  .task-form {
+    margin-top: 1rem;
+  }
+  .task-input-group .task-input {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.2rem;
+  }
+  .task-input-group .task-textarea {
+    font-size: 0.7rem;
+    padding: 0.6rem 0.4rem;
+    height: 4rem;
+  }
+  .task-input-group .task-input::placeholder,
+  .task-input-group .task-textarea::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .task-detail .task-label {
+    font-size: 0.7rem;
+  }
+  .task-detail .task-select {
+    padding: 0.1rem;
+    font-size: 0.65rem;
+  }
+  .task-subtasks {
+    margin-top: 1.2rem;
+  }
+  .task-subtasks button {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+  .task-subtasks button i {
+    font-size: 0.7rem;
+  }
+  .task-subtask-list .task-subtask {
+    padding: 0.1rem;
+  }
+  .task-subtask .task-subtask-label {
+    font-size: 0.7rem;
+  }
+  .task-actions button {
+    padding: 0.4rem 0;
+    font-size: 0.7rem;
+  }
+}
